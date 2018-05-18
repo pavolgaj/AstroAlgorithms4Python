@@ -4,6 +4,11 @@ import numpy as np
 
 eps=np.deg2rad(23.4457889)   #obliquity of ecliptic
 
+#coordinates of North Galactic Pole
+raG=np.deg2rad(192.85948)
+decG=np.deg2rad(27.12825)
+lNP=np.deg2rad(122.93192)  #gal. longitude of North Celestial Pole
+
 def local_sid(sid,lon):
     '''calculation of local sidereal time from Greenwich sidereal time (in degrees)'''
     return sid+lon
@@ -188,4 +193,92 @@ def ecl2eq(lam,beta):
         dec=dec.tolist()
         ra=ra.tolist()
     return ra,dec        
+
+
+def eq2gal(ra,dec):
+    '''transformation of equatorial coordinates (RA, DEC) to galactic (l, b)'''
+    
+    #type of output (same as input - number, list, numpy.array)
+    out_type='lst'
+    if (isinstance(ra,int) or isinstance(ra,float)) and (isinstance(dec,int) or isinstance(dec,float)): 
+        #all input args are numbers        
+        out_type='num' 
+        
+    if isinstance(ra,np.ndarray) or isinstance(dec,np.ndarray):
+        #numpy.array
+        out_type='np' 
+        
+    if isinstance(ra,list): ra=np.array(ra)
+    if isinstance(dec,list): dec=np.array(dec)
+    
+    if out_type=='num': ra=np.array([ra])
+    
+    ra=np.deg2rad(ra)-raG
+    dec=np.deg2rad(dec)
+    
+    b=np.arcsin(np.sin(dec)*np.sin(decG)+np.cos(dec)*np.cos(decG)*np.cos(ra))
+    sinL=np.cos(dec)*np.sin(ra)/np.cos(b)
+    cosL=(np.sin(dec)*np.cos(decG)-np.cos(dec)*np.sin(decG)*np.cos(ra))/np.cos(b)
+    
+    l=np.arcsin(sinL)
+    l[np.where(cosL<0)]=np.pi-l[np.where(cosL<0)]
+    l[np.where((sinL<0)*(cosL>0))]+=2*np.pi
+    l=lNP-l
+    l[np.where(l>=2*np.pi)]-=2*np.pi
+    l[np.where(l<0)]+=2*np.pi
+    
+    l=np.rad2deg(l)
+    b=np.rad2deg(b)
+
+    if out_type=='num':
+        b=b[0]
+        l=l[0]
+    elif out_type=='lst':
+        b=b.tolist()
+        l=l.tolist()
+    return l,b  
+
+
+def gal2eq(l,b):
+    '''transformation of galactic coordinates (l, b) to equatorial (RA, DEC)'''
+    
+    #type of output (same as input - number, list, numpy.array)
+    out_type='lst'
+    if (isinstance(l,int) or isinstance(l,float)) and (isinstance(b,int) or isinstance(b,float)): 
+        #all input args are numbers        
+        out_type='num' 
+        
+    if isinstance(l,np.ndarray) or isinstance(b,np.ndarray):
+        #numpy.array
+        out_type='np' 
+        
+    if isinstance(l,list): l=np.array(l)
+    if isinstance(b,list): b=np.array(b)
+    
+    if out_type=='num': b=np.array([b])
+    
+    l=lNP-np.deg2rad(l)
+    b=np.deg2rad(b)
+    
+    dec=np.arcsin(np.sin(decG)*np.sin(b)+np.cos(decG)*np.cos(b)*np.cos(l))
+    sinR=np.cos(b)*np.sin(l)/np.cos(dec)
+    cosR=(np.cos(decG)*np.sin(b)-np.sin(decG)*np.cos(b)*np.cos(l))/np.cos(dec)
+    
+    ra=np.arcsin(sinR)
+    ra[np.where(cosR<0)]=np.pi-ra[np.where(cosR<0)]
+    ra[np.where((sinR<0)*(cosR>0))]+=2*np.pi
+    ra+=raG
+    ra[np.where(ra>=2*np.pi)]-=2*np.pi
+    ra[np.where(ra<0)]+=2*np.pi
+    
+    ra=np.rad2deg(ra)
+    dec=np.rad2deg(dec)
+
+    if out_type=='num':
+        ra=ra[0]
+        dec=dec[0]
+    elif out_type=='lst':
+        ra=ra.tolist()
+        dec=dec.tolist()
+    return ra,dec 
     

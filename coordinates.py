@@ -2,16 +2,19 @@
 
 import numpy as np
 
-eps=np.deg2rad(23.4457889)   #obliquity of ecliptic
-
-#coordinates of North Galactic Pole
-raG=np.deg2rad(192.85948)
-decG=np.deg2rad(27.12825)
-lNP=np.deg2rad(122.93192)  #gal. longitude of North Celestial Pole
+from constants import *
 
 def local_sid(sid,lon):
     '''calculation of local sidereal time from Greenwich sidereal time (in degrees)'''
     return sid+lon
+
+def ra2ha(ra,sid):
+    '''calculation of hour angle from RA'''
+    return sid-ra
+
+def ha2ra(ha,sid):
+    '''calculation of RA from hour angle'''
+    return sid-ha
 
 def eq2azm(ha,dec,lat,sid=None,ra=False):
     '''transformation of equatorial coordinates (Hour angle, DEC) to azimutal (Azm - from South!, Alt); 

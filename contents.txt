@@ -1,0 +1,19 @@
+Meeus: Astronomical Algorithms (2nd ed.)
+
+Chap. 07: jul_dat.py
+Chap. 08: easter.py
+Chap. 11: earth_globe.py
+Chap. 12: sidereal.py
+Chap. 13: coordinates.py
+Chap. 14: paralactic.py
+Chap. 15: rising.py
+Chap. 16: refraction.py
+Chap. 17: separation.py
+Chap. 21: precesion.py
+Chap. 22: nutation_ecliptic.py
+Chap. 23: coordinates_corr.py
+Chap. 25: sun.py
+
+angles.py - not in AA
+constants.py - some common constants
+

@@ -18,6 +18,7 @@ Chap. 27: equinox.py
 Chap. 28: time_eq.py
 Chap. 29: physical_sun.py
 Chap. 30: kepler.py
+Chap. 31: elements.py
 
 angles.py - not in AA
 constants.py - some common constants

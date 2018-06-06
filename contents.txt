@@ -13,7 +13,11 @@ Chap. 21: precesion.py
 Chap. 22: nutation_ecliptic.py
 Chap. 23: coordinates_corr.py
 Chap. 25: sun.py
+Chap. 26: 
 Chap. 27: equinox.py
+Chap. 28: time_eq.py
+Chap. 29: physical_sun.py
+Chap. 30: kepler.py
 
 angles.py - not in AA
 constants.py - some common constants

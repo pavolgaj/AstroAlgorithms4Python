@@ -23,6 +23,14 @@ Chap. 32:
 Chap. 33:
 Chap. 36:
 Chap. 38: perihelion.py
+Chap. 40: ?
+Chap. 41:
+Chap. 42:
+Chap. 43:
+Chap. 44: 
+Chap. 45:
+Chap. 46:
+Chap. 47: moon.py
 
 
 angles.py - not in AA

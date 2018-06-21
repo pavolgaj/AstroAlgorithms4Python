@@ -5,7 +5,7 @@ import math
 from nutation_ecliptic import nutation
 from coordinates import ecl2eq
 
-def position(jd):
+def position(jd,full=False):
     '''equatorial geocentric coordinates of Moon'''
     T=(jd-2451545)/36525.
     
@@ -71,6 +71,7 @@ def position(jd):
 
     ra,dec=ecl2eq(lon,lat)
     
+    if full: return ra,dec,lon,lat,dist,par
     return ra,dec
     
     

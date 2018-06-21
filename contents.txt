@@ -2,6 +2,7 @@ Meeus: Astronomical Algorithms (2nd ed.)
 
 Chap. 07: jul_dat.py
 Chap. 08: easter.py
+Chap. 10: dynamical_time.py
 Chap. 11: earth_globe.py
 Chap. 12: sidereal.py
 Chap. 13: coordinates.py
@@ -31,6 +32,8 @@ Chap. 44:
 Chap. 45:
 Chap. 46:
 Chap. 47: moon.py
+Chap. 48: moon_disk.py
+Chap. 49: moon_phases.py
 
 
 angles.py - not in AA

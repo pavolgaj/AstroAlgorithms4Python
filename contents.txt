@@ -34,6 +34,7 @@ Chap. 46:
 Chap. 47: moon.py
 Chap. 48: moon_disk.py
 Chap. 49: moon_phases.py
+Chap. 50: moon_perigee.py
 
 
 angles.py - not in AA

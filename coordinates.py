@@ -48,9 +48,7 @@ def eq2azm(ha,dec,lat,sid=None,ra=False):
     alt=np.arcsin(np.sin(dec)*np.sin(lat)+np.cos(dec)*np.cos(lat)*np.cos(t))
     sinA=np.cos(dec)*np.sin(t)/np.cos(alt)
     cosA=(-np.cos(lat)*np.sin(dec)+np.sin(lat)*np.cos(dec)*np.cos(t))/np.cos(alt)
-    azm=np.arcsin(sinA)
-    azm[np.where(cosA<0)]=np.pi-azm[np.where(cosA<0)]
-    azm[np.where((sinA<0)*(cosA>0))]+=2*np.pi
+    azm=np.arctan2(sinA,cosA)
     azm[np.where(azm<0)]+=2*np.pi
     
     azm=np.rad2deg(azm)
@@ -95,9 +93,7 @@ def azm2eq(azm,alt,lat,sid=None,ra=False):
     sinH=np.cos(alt)*np.sin(azm)/np.cos(dec)
     cosH=(np.sin(alt)*np.cos(lat)+np.cos(alt)*np.sin(lat)*np.cos(azm))/np.cos(dec)
     
-    ha=np.arcsin(sinH)
-    ha[np.where(cosH<0)]=np.pi-ha[np.where(cosH<0)]
-    ha[np.where((sinH<0)*(cosH>0))]+=2*np.pi
+    ha=np.arctan2(sinH,cosH)
     ha[np.where(ha<0)]+=2*np.pi
     
     ha=np.rad2deg(ha)
@@ -139,9 +135,7 @@ def eq2ecl(ra,dec):
     sinL=(np.sin(ra)*np.cos(dec)*np.cos(eps)+np.sin(dec)*np.sin(eps))/np.cos(beta)
     cosL=np.cos(ra)*np.cos(dec)/np.cos(beta)
     
-    lam=np.arcsin(sinL)
-    lam[np.where(cosL<0)]=np.pi-lam[np.where(cosL<0)]
-    lam[np.where((sinL<0)*(cosL>0))]+=2*np.pi
+    lam=np.arctan2(sinL,cosL)
     lam[np.where(lam<0)]+=2*np.pi
     
     lam=np.rad2deg(lam)
@@ -181,9 +175,7 @@ def ecl2eq(lam,beta):
     sinR=(np.sin(lam)*np.cos(beta)*np.cos(eps)-np.sin(beta)*np.sin(eps))/np.cos(dec)
     cosR=np.cos(lam)*np.cos(beta)/np.cos(dec)
     
-    ra=np.arcsin(sinR)
-    ra[np.where(cosR<0)]=np.pi-ra[np.where(cosR<0)]
-    ra[np.where((sinR<0)*(cosR>0))]+=2*np.pi
+    ra=np.arctan2(sinR,cosR)
     ra[np.where(ra<0)]+=2*np.pi
     
     ra=np.rad2deg(ra)
@@ -223,9 +215,7 @@ def eq2gal(ra,dec):
     sinL=np.cos(dec)*np.sin(ra)/np.cos(b)
     cosL=(np.sin(dec)*np.cos(decG)-np.cos(dec)*np.sin(decG)*np.cos(ra))/np.cos(b)
     
-    l=np.arcsin(sinL)
-    l[np.where(cosL<0)]=np.pi-l[np.where(cosL<0)]
-    l[np.where((sinL<0)*(cosL>0))]+=2*np.pi
+    l=np.arctan2(sinL,cosL)
     l=lNP-l
     l[np.where(l>=2*np.pi)]-=2*np.pi
     l[np.where(l<0)]+=2*np.pi
@@ -267,9 +257,7 @@ def gal2eq(l,b):
     sinR=np.cos(b)*np.sin(l)/np.cos(dec)
     cosR=(np.cos(decG)*np.sin(b)-np.sin(decG)*np.cos(b)*np.cos(l))/np.cos(dec)
     
-    ra=np.arcsin(sinR)
-    ra[np.where(cosR<0)]=np.pi-ra[np.where(cosR<0)]
-    ra[np.where((sinR<0)*(cosR>0))]+=2*np.pi
+    ra=np.arctan2(sinR,cosR)
     ra+=raG
     ra[np.where(ra>=2*np.pi)]-=2*np.pi
     ra[np.where(ra<0)]+=2*np.pi

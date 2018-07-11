@@ -20,7 +20,7 @@ Chap. 28: time_eq.py
 Chap. 29: physical_sun.py
 Chap. 30: kepler.py
 Chap. 31: elements.py
-Chap. 32:
+Chap. 32: position.py
 Chap. 33:
 Chap. 36:
 Chap. 38: perihelion.py

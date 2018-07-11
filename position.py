@@ -33,6 +33,10 @@ def _load(name,jd):
     elif v==3: r+=tmp*T**n
     f.close()
     
+    Ll=L-math.radians(1.397*T+0.00031*T**2)
+    L+=math.radians((-0.09033+0.03916*(math.cos(Ll)+math.sin(Ll))*math.tan(B))/3600.)
+    B+=math.radians(0.03916*(math.cos(Ll)-math.sin(Ll))/3600.)
+    
     return L,B,r
 
 def Mercury(jd):

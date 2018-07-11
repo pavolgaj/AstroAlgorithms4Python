@@ -37,45 +37,42 @@ def _load(name,jd):
     L+=math.radians((-0.09033+0.03916*(math.cos(Ll)+math.sin(Ll))*math.tan(B))/3600.)
     B+=math.radians(0.03916*(math.cos(Ll)-math.sin(Ll))/3600.)
     
+    L=math.degrees(L)%360
+    B=math.degrees(B)%360
+    
+    if B>180: B-=360
+    
     return L,B,r
 
 def Mercury(jd):
     '''heliocentric coordinates of Mercury'''
-    L,B,r=_load('vsop87/VSOP87B.mer',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.mer',jd)    
 
 def Venus(jd):
     '''heliocentric coordinates of Venus'''
-    L,B,r=_load('vsop87/VSOP87B.ven',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.ven',jd)    
 
 def Earth(jd):
     '''heliocentric coordinates of Earth'''
-    L,B,r=_load('vsop87/VSOP87B.ear',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.ear',jd)
 
 def Mars(jd):
     '''heliocentric coordinates of Mars'''
-    L,B,r=_load('vsop87/VSOP87B.mar',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.mar',jd)
 
 def Jupiter(jd):
     '''heliocentric coordinates of Jupiter'''
-    L,B,r=_load('vsop87/VSOP87B.jup',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.jup',jd)
 
 def Saturn(jd):
     '''heliocentric coordinates of Saturn'''
-    L,B,r=_load('vsop87/VSOP87B.sat',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.sat',jd)
 
 def Uranus(jd):
     '''heliocentric coordinates of Uranus'''
-    L,B,r=_load('vsop87/VSOP87B.ura',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.ura',jd)
 
 def Neptune(jd):
     '''heliocentric coordinates of Neptune'''
-    L,B,r=_load('vsop87/VSOP87B.nep',jd)
-    return math.degrees(L)%360,math.degrees(B)%360,r
+    return _load('vsop87/VSOP87B.nep',jd)
     

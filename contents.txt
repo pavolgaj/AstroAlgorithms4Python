@@ -38,7 +38,7 @@ Chap. 50: moon_perigee.py
 Chap. 51: moon_nodes.py
 Chap. 52: moon_declination.py
 Chap. 53: moon_libration.py
-Chap. 54:
+Chap. 54: eclipse.py
 
 
 angles.py - not in AA

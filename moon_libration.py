@@ -57,7 +57,7 @@ def physical(jd):
         -0.00096*math.sin(Mm-D)+0.00046*math.sin(2*F-2*D)-0.00039*math.sin(Mm-F)-0.00032*E*math.sin(Mm-M-D)+0.00027*E*math.sin(2*Mm-M-2*D)+0.00023*math.sin(K2)-0.00014*math.sin(2*D)\
         +0.00014*math.cos(2*Mm-2*F)-0.00012*math.sin(Mm-2*F)-0.00012*math.sin(2*Mm)+0.00011*E*math.sin(2*Mm-2*M-2*D)
     
-    l1,b1=optical(jd)    
+    l1,b1=optical(jd)
     A=math.radians(l1)+F
     
     l=-tau+(rho*math.cos(A)+sig*math.sin(A))*math.tan(math.radians(b1))
@@ -86,8 +86,6 @@ def topocentric(jd,lon,lat,correct=True):
     Mm=math.radians(134.9633964+477198.8675055*T+0.0087414*T**2+T**3/69699.-T**4/14712000.)
     F=math.radians(93.2720950+483202.0175233*T-0.0036539*T**2-T**3/3526000.+T**4/863310000.)
     W=math.radians(125.0445479-1934.1362891*T+0.0020754*T**2+T**3/467441.-T**4/60616000.)
-    
-    E=1-0.002516*T-0.0000047*T**2
 
     rho=-0.02752*math.cos(Mm)-0.02245*math.sin(F)+0.00684*math.cos(Mm-2*F)-0.00293*math.cos(2*F)-0.00085*math.cos(2*F-2*D)-0.00054*math.cos(Mm-2*D)-0.00020*math.sin(Mm+F)-0.00020*math.cos(Mm+2*F)\
         -0.00020*math.cos(Mm-F)+0.00014*math.cos(Mm+2*F-2*D)
@@ -113,10 +111,4 @@ def topocentric(jd,lon,lat,correct=True):
     if correct: return l+l1+dl,b+b1+db
 
     return dl,db
-    
-    
-    
-    
-
-    
     

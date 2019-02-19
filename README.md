@@ -1,6 +1,11 @@
 # AstroAlgorithms4Python
 ### Python version of Meeus's Astronomical Algorithms
 
+![GitHub top language](https://img.shields.io/github/languages/top/pavolgaj/AstroAlgorithms4Python.svg?style=flat)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e59b48d2386c4fdca173a95b386350f1)](https://www.codacy.com/app/pavolgaj/AstroAlgorithms4Python?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pavolgaj/AstroAlgorithms4Python&amp;utm_campaign=Badge_Grade)
+![GitHub issues](https://img.shields.io/github/issues/pavolgaj/AstroAlgorithms4Python.svg?style=flat)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/pavolgaj/AstroAlgorithms4Python.svg?style=flat)
+
 This package used only basic python packages and function but package numpy is required in some cases (e.g. coordinates calculations and conversions).
 
 ## Contents:

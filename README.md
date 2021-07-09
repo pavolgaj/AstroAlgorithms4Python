@@ -3,7 +3,7 @@
 
 [![DOI](https://zenodo.org/badge/128760106.svg)](https://zenodo.org/badge/latestdoi/128760106)
 ![GitHub top language](https://img.shields.io/github/languages/top/pavolgaj/AstroAlgorithms4Python.svg?style=flat)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e59b48d2386c4fdca173a95b386350f1)](https://www.codacy.com/app/pavolgaj/AstroAlgorithms4Python?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pavolgaj/AstroAlgorithms4Python&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cc0c4c467ddf4231b959c19a471b74d6)](https://www.codacy.com/gh/pavolgaj/AstroAlgorithms4Python/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pavolgaj/AstroAlgorithms4Python&amp;utm_campaign=Badge_Grade)
 ![GitHub issues](https://img.shields.io/github/issues/pavolgaj/AstroAlgorithms4Python.svg?style=flat)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/pavolgaj/AstroAlgorithms4Python.svg?style=flat)
 
